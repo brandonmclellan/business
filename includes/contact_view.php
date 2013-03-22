@@ -72,12 +72,32 @@
 								</td>
 						</tr>
 						<tr>
-							<td>McLellan, Brandon
-							
-							</td>
 							<td>
-								<a id="phone_number" href="tel:7057953387">(705) 795-3387</a>
-								<div id="phone_type">Mobile</div>
+							<div id="contact">
+								<h2>McLellan, Brandon</h2>
+								<h3>Email Address List</h3>
+								<hr>
+									<a href="mailto:flames_of_fire69@hotmail.com">flames_of_fire69@hotmail.com</a>
+									<a href="mailto:brandon.d.mclellan@gmail.com">brandon.d.mclellan@gmail.com</a>
+									<a href="mailto:McGodly@gmail.com">McGodly@gmail.com</a>
+								<h3>Address</h3>
+								<hr>
+									<address>
+										21B College Cres<br />
+										Barrie, ON L4M 2W4<br />
+										Canada
+									</address>									
+									<a href="https://maps.google.ca/maps?q=21B College Cres Barrie, ON L4M 2W4 Canada"><img alt="Google Maps" src="images/map.png" /></a>
+									<div class="type">Home</div>
+								</div>
+								</td>
+								<td>
+									<a id="phone_number" href="tel:7057953387">(705) 795-3387</a>
+									<div id="phone_type">Mobile</div>
+									<a id="phone_number" href="tel:7057953387">(705) 795-3387</a>
+									<div id="phone_type">Home</div>
+									<a id="phone_number" href="tel:7057953387">(705) 795-3387</a>
+									<div id="phone_type">Work</div>
 								</td>
 						</tr>
 					</tbody>
