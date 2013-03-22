@@ -43,4 +43,63 @@
 		return true;
 	}
 	
+	function get_contacts() {
+		global $db;
+		
+		$contacts = array();
+		
+		$sql = 'SELECT id, first_name, last_name FROM contacts WHERE user_id = ? ORDER BY last_name ASC';
+		$sth = $db->prepare($sql);
+		$sth->bindValue(1, $_SESSION['id']);
+		$sth->execute();
+	
+		// Pre-prepare statements to select phone numbers, addresses and email.
+		$pth = $db->prepare('SELECT id, number, type FROM phone_numbers WHERE contact_id = ?');
+		$ath = $db->prepare('SELECT id, address, city, province, country, postal_code, type FROM address WHERE contact_id = ?');
+		$eth = $db->prepare('SELECT id, email FROM email_address WHERE contact_id = ?');
+		
+		// Iterate every contact for the given user.
+		while($row = $sth->fetch(PDO::FETCH_ASSOC)) {
+			$contact = array(
+				'id'			=> $row['id'],
+				'last_name' 	=> $row['last_name'],
+				'first_name'	=> $row['first_name'],
+				'phone'			=> array(),
+				'address'		=> array(),
+				'email'			=> array()
+			);
+			
+			// Pull current contacts phone numbers
+			$pth->bindValue(1, $contact['id']);
+			$pth->execute();
+			
+			while ($row = $pth->fetch(PDO::FETCH_ASSOC)) {
+				$contact['phone'][] = $row;
+			}
+			$pth->closeCursor();
+			
+			// Pull current contacts addresses
+			$ath->bindValue(1, $contact['id']);
+			$ath->execute();
+			
+			while ($row = $ath->fetch(PDO::FETCH_ASSOC)) {
+				$contact['address'][] = $row;
+			}
+			$ath->closeCursor();
+			
+			// Pull current email addresses
+			$eth->bindValue(1, $contact['id']);
+			$eth->execute();
+			
+			while ($row = $eth->fetch(PDO::FETCH_ASSOC)) {
+				$contact['email'][] = $row;
+			}
+			$eth->closeCursor();
+			
+			// Add contact to list to return.
+			$contacts[] = $contact;
+		}
+		
+		return $contacts;
+	}
 ?>

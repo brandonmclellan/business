@@ -1,3 +1,13 @@
+<?php
+	//Make sure the page was included and not run seperately.
+	if (!defined('INCLUDED')) {
+		header('Location: contacts.php');
+		die;
+	}
+	
+	$contacts = get_contacts();
+?>
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -50,61 +60,64 @@
 						<th width="30%">Phone Number</th>
 					</thead>
 					<tbody>
-						<tr>
-							<td>McLellan, Brandon</td>
+						<?php foreach ($contacts as $contact): ?>
+						
+						<tr class="contact_row">
 							<td>
-								<a id="phone_number" href="tel:7057953387">(705) 795-3387</a>
-								<div id="phone_type">Mobile</div>
-								</td>
-						</tr>
-						<tr>
-							<td>McLellan, Brandon</td>
-							<td>
-								<a id="phone_number" href="tel:7057953387">(705) 795-3387</a>
-								<div id="phone_type">Mobile</div>
-								</td>
-						</tr>
-						<tr>
-							<td>McLellan, Brandon</td>
-							<td>
-								<a id="phone_number" href="tel:7057953387">(705) 795-3387</a>
-								<div id="phone_type">Mobile</div>
-								</td>
-						</tr>
-						<tr>
-							<td>
-							<div id="contact">
-								<h2>McLellan, Brandon</h2>
-								<h3>Email Address List</h3>
-								<hr>
-									<a href="mailto:flames_of_fire69@hotmail.com">flames_of_fire69@hotmail.com</a>
-									<a href="mailto:brandon.d.mclellan@gmail.com">brandon.d.mclellan@gmail.com</a>
-									<a href="mailto:McGodly@gmail.com">McGodly@gmail.com</a>
-								<h3>Address</h3>
-								<hr>
+								<div class="name"><?=$contact['last_name'];?>, <?=$contact['first_name']?></div>
+								<div class="contact" style="display:none;">
+									<h2><?=$contact['last_name'];?>, <?=$contact['first_name']?></h2>
+									<h3>Email Address List</h3>
+									<hr>
+									<?php if (count($contact['email']) == 0): ?>
+									<div class="empty">No email available.</div>
+									<?php endif; ?>
+										<?php foreach($contact['email'] as $email): ?>
+										<a href="mailto:<?=$email['email']?>"><?=$email['email']?></a>
+										<?php endforeach; ?>
+									<h3>Address</h3>
+									<hr>
+									<?php if (count($contact['address']) == 0): ?>
+									<div class="empty">No address available.</div>
+									<?php endif; ?>
+									<?php foreach($contact['address'] as $address): ?>
 									<address>
-										21B College Cres<br />
-										Barrie, ON L4M 2W4<br />
-										Canada
+										<?=$address['address']?><br />
+										<?=$address['city']?>, <?=$address['province']?> <?=$address['postal_code']?><br />
+										<?=$address['country']?>
 									</address>									
-									<a href="https://maps.google.ca/maps?q=21B College Cres Barrie, ON L4M 2W4 Canada"><img alt="Google Maps" src="images/map.png" /></a>
-									<div class="type">Home</div>
+									<a href="https://maps.google.ca/maps?q=<?=$address['address']?> <?=$address['city']?> <?=$address['province']?> <?=$address['country']?>"><img alt="Google Maps" src="images/map.png" /></a>
+									<div class="type"><?=$address['type']?></div>
+									<?php endforeach; ?>
 								</div>
-								</td>
-								<td>
-									<a id="phone_number" href="tel:7057953387">(705) 795-3387</a>
-									<div id="phone_type">Mobile</div>
-									<a id="phone_number" href="tel:7057953387">(705) 795-3387</a>
-									<div id="phone_type">Home</div>
-									<a id="phone_number" href="tel:7057953387">(705) 795-3387</a>
-									<div id="phone_type">Work</div>
-								</td>
+							</td>
+							<td>
+									<?php if (count($contact['phone']) == 0): ?>
+										--
+									<?php else:
+										$main = array_pop($contact['phone']);
+									?>
+										<a id="phone_number" href="tel:<?=$main['number']?>"><?=$main['number']?></a>
+										<div id="phone_type"><?=$main['type']?></div>
+									<?php endif; ?>
+									<div class="extended_phone" style="display:none;">
+										<?php foreach($contact['phone'] as $phone): ?>
+										<a id="phone_number" href="tel:<?=$phone['number']?>"><?=$phone['number']?></a>
+										<div id="phone_type"><?=$phone['type']?></div>
+										<?php endforeach; ?>
+									</div>
+							</td>
 						</tr>
+						<?php endforeach; ?>
 					</tbody>
 				</table>
             </div> <!-- #main -->
         </div> <!-- #main-container -->
 
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
+		<script src="js/contact_page.js"></script>
+		
         <div class="footer-container">
             <footer class="wrapper">
                 <h3>Copyright Brandon McLellan 2013</h3>

@@ -153,42 +153,42 @@ input {
  
 
 /* Contact name */
-#contact h2 {
+.contact h2 {
 	text-align:center;
 	font-weight: 1.2em;
 	margin: 0;
 }
 
 /* Sub-header(Email, Address) */
-#contact h3 {
+.contact h3 {
 	margin: 0 3px;
 	font-weight: bold;
 	font-size: 1em;
 }
 
-#contact hr {
+.contact hr {
 	margin: 0;
 }
 
 /* Email link */
-#contact a {
+.contact a {
 	margin-left: 15px;
 	color: #000000;
 	display: block;
 }
 
-#contact address {
+.contact address {
 	float: left;
 	margin-left: 15px;
 }
 
 /* Google Maps Link */
-#contact address a {
+.contact address a {
 	margin-left: 10px;
 	float: left;
 }
 
-#contact .type {
+.contact .type {
 	float: right;
 	font-style: italic;
 	font-size: 0.8em;

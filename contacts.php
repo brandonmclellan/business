@@ -24,6 +24,5 @@
 		die;
 	}
 	
-	
 	include "includes/contact_view.php";
 ?>
