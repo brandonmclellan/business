@@ -31,9 +31,10 @@
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="aboutme.html">About Me</a></li>
+                        <li><a href="projects.html">Projects</a></li>
                         <li><a href="services.html">Services</a></li>
                         <li><a href="https://github.com/brandonmclellan">GitHub</a></li>
-						<li><a href="contacts.html" class="active-nav">Contacts</a></li>
+						<li><a href="contacts.php" class="active-nav">Contact List</a></li>
                         <li><a href="contactme.html">Contact</a></li>
                     </ul>
                         

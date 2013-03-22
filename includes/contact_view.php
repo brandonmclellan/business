@@ -41,9 +41,10 @@
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="aboutme.html">About Me</a></li>
-                        <li><a href="projects.html" class="active-nav">Projects</a></li>
+                        <li><a href="projects.html">Projects</a></li>
                         <li><a href="services.html">Services</a></li>
                         <li><a href="https://github.com/brandonmclellan">GitHub</a></li>
+						<li><a href="contacts.php" class="active-nav">Contact List</a></li>
                         <li><a href="contactme.html">Contact</a></li>
                     </ul>
                         
@@ -54,6 +55,7 @@
         <div class="main-container">
             <div class="main wrapper clearfix">
 				<h2>Business Contacts</h2>
+				<a href="contacts.php?logout=1"><div class="logout">Logout</div></a>
 				<table id="contacts" class="contacts">
 					<thead>
 						<th >Last, First</th>

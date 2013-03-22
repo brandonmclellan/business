@@ -65,8 +65,8 @@ body {
 }
 
 .wrapper {
-    width: 90%;
-    margin: 0 5%;
+    width: 95%;
+    margin: 0 2%;
 }
 
 
@@ -337,7 +337,7 @@ nav a:hover {
     nav a {
         float: left;
         width: 9%;
-        margin: 0 1.7%;
+        margin: 0 1.7px;
         padding: 5px 2%;
         margin-bottom: 0;
         border-top-left-radius: 70px 60px;
@@ -390,7 +390,7 @@ nav a:hover {
 
     nav {
         float: right;
-        width:  80%;
+        width:  100%;
     }
 
 /* ============

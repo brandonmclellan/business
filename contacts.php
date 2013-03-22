@@ -24,5 +24,12 @@
 		die;
 	}
 	
+	// Check if the user was trying to log out.
+	if (isset($_GET['logout'])) {
+		$_SESSION = array();
+		session_destroy();
+		header('Location: login.php');
+	}
+	
 	include "includes/contact_view.php";
 ?>
