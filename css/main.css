@@ -95,6 +95,11 @@ input {
 	background-color:#2B4181;
 }
 
+#error {
+	color: #FF0000;
+	font-weight: bold;
+}
+
 #login:hover {
 	background-color:#022170;
 }
@@ -111,13 +116,36 @@ input {
 	color: white;
 	background-color:#062170;
 	text-align: left;
+	
 }
 
+#contacts td {
+	border: 2px solid black;
+}
+
+#phone_number {
+	float: right;
+	
+}
+
+#phone_type {
+	float: right;
+	font-style: italic;
+	font-size: 0.7em;
+	font-weight: bold;
+	padding-right: 3px;
+}
+
+#contacts tr:hover {
+	background-color:#ECEBFA;
+}
+
+/*
 #contacts tr:nth-child(even) td
 {
 	background-color:#6C8CD5;
 }
-
+*/
 /* ===================
     ALL: Blue Theme
    =================== */

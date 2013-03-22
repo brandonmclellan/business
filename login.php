@@ -45,7 +45,9 @@
             <div class="main wrapper clearfix">
 				<h2>Contacts Login Page</h2>
 				<form method="POST" action="contacts.php">
-				
+					<?php if (isset($error)): ?>
+					<div id="error">The username/password combination is incorrect.</div>
+					<?php endif; ?>
 					<label for="username">Username</label>
 					<input type="text" name="username" id="username" /><br />
 					
