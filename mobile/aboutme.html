@@ -1,0 +1,53 @@
+<!--  
+File Name: aboutme.html
+Author: Brandon McLellan
+Website Name: Mobile Portfolio
+Description: Mobile website about page
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Brandon McLellan's Portfolio</title>
+		
+		<link rel="stylesheet" href="themes/Theme.css" />
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile.structure-1.3.0.min.css" />
+			
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
+	</head>
+	<body>
+		<div data-role="page" data-add-back-btn="true" data-theme="a">
+			<!-- Page Header -->
+			<div data-role="header" data-position="inline">
+				<div class="logo-center"></div>
+				<!-- Navigation -->
+				<div data-role="navbar" data-grid="c" data-iconpos="left">
+					<ul>
+						<li><a href="index.html" data-icon="home">Home</a></li>
+						<li><a href="aboutme.html" data-icon="star" class="ui-btn-active">About Me</a></li>
+						<li><a href="login.php" data-icon="gear">Login</a></li>
+						<li><a href="contactme.html" data-icon="info">Contact Me</a></li>
+					</ul>
+				</div>
+			</div>
+			
+			<!-- Content -->
+			<div data-role="content" data-theme="a">
+				<div class="personal-photo">
+					<h1>About Me</h1>
+                    <p><img src="images/headshot.jpg" /></p>
+                    <p>My name is Brandon Douglas McLellan, a programmer residing in Barrie, Ontario. I've been fasinated by computer since the age of 4, turning my lifelong hobby into a career.</p>
+                    <p><a href="Resume.pdf" class="see-more">Resume</a></p>
+				</div>
+			</div>
+			
+			<!-- Page Footer -->
+			<div data-role="footer">
+				<h4>Copyright Brandon McLellan 2013</h4>
+				<h4><a href="#">Full Site</a></h4>
+			</div>
+		</div>
+	</body>
+</html>

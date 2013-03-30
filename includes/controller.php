@@ -43,6 +43,9 @@
 		return true;
 	}
 	
+	/** get_contacts()
+	 * 		Pulls every contact from database for given user.
+	 */
 	function get_contacts() {
 		global $db;
 		

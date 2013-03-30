@@ -16,6 +16,8 @@
 			require 'login.php';
 			die;
 		}
+	
+		$_SESSION['mobile'] = isset($_POST['mobile']);
 	}
 	
 	//Make sure user is logged in past this point
@@ -31,5 +33,9 @@
 		header('Location: login.php');
 	}
 	
-	include "includes/contact_view.php";
+	if ($_SESSION['mobile']) {
+		include "includes/contact_mobile.php";
+	} else {
+		include "includes/contact_view.php";
+	}
 ?>
